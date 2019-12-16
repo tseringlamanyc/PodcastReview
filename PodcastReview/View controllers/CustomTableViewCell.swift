@@ -10,4 +10,7 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var podcastImage: UIImageView!
+    @IBOutlet weak var podcastName: UILabel!
+    
 }
