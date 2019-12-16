@@ -1,5 +1,5 @@
 //
-//  Podcast.swift
+//  PodcastAPI.swift
 //  PodcastReview
 //
 //  Created by Tsering Lama on 12/16/19.
@@ -7,5 +7,3 @@
 //
 
 import Foundation
-
-

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		520A70F123A8320C00139C10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A70F023A8320C00139C10 /* AppDelegate.swift */; };
 		520A70F323A8320C00139C10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A70F223A8320C00139C10 /* SceneDelegate.swift */; };
-		520A70F523A8320C00139C10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A70F423A8320C00139C10 /* ViewController.swift */; };
+		520A70F523A8320C00139C10 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A70F423A8320C00139C10 /* PodcastViewController.swift */; };
 		520A70F823A8320C00139C10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520A70F623A8320C00139C10 /* Main.storyboard */; };
 		520A70FA23A8321400139C10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520A70F923A8321400139C10 /* Assets.xcassets */; };
 		520A70FD23A8321400139C10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520A70FB23A8321400139C10 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,9 @@
 		520A711623A8334700139C10 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A711523A8334700139C10 /* AppError.swift */; };
 		520A711823A8335300139C10 /* ImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A711723A8335300139C10 /* ImageClient.swift */; };
 		520A711B23A833B100139C10 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A711A23A833B100139C10 /* Podcast.swift */; };
+		520A711D23A8343800139C10 /* PodcastAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A711C23A8343800139C10 /* PodcastAPI.swift */; };
+		52B894D723A8365D0021CBA3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B894D623A8365D0021CBA3 /* FavoriteViewController.swift */; };
+		52B894D923A837160021CBA3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B894D823A837160021CBA3 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +37,7 @@
 		520A70ED23A8320C00139C10 /* PodcastReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520A70F023A8320C00139C10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		520A70F223A8320C00139C10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		520A70F423A8320C00139C10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		520A70F423A8320C00139C10 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		520A70F723A8320C00139C10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		520A70F923A8321400139C10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520A70FC23A8321400139C10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		520A711523A8334700139C10 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		520A711723A8335300139C10 /* ImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClient.swift; sourceTree = "<group>"; };
 		520A711A23A833B100139C10 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		520A711C23A8343800139C10 /* PodcastAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastAPI.swift; sourceTree = "<group>"; };
+		52B894D623A8365D0021CBA3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		52B894D823A837160021CBA3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +93,11 @@
 		520A70EF23A8320C00139C10 /* PodcastReview */ = {
 			isa = PBXGroup;
 			children = (
+				520A711E23A8344800139C10 /* View controllers */,
 				520A711923A833A500139C10 /* Models */,
 				520A711223A8331B00139C10 /* Helper */,
 				520A70F023A8320C00139C10 /* AppDelegate.swift */,
 				520A70F223A8320C00139C10 /* SceneDelegate.swift */,
-				520A70F423A8320C00139C10 /* ViewController.swift */,
 				520A70F623A8320C00139C10 /* Main.storyboard */,
 				520A70F923A8321400139C10 /* Assets.xcassets */,
 				520A70FB23A8321400139C10 /* LaunchScreen.storyboard */,
@@ -123,8 +129,19 @@
 			isa = PBXGroup;
 			children = (
 				520A711A23A833B100139C10 /* Podcast.swift */,
+				520A711C23A8343800139C10 /* PodcastAPI.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		520A711E23A8344800139C10 /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				520A70F423A8320C00139C10 /* PodcastViewController.swift */,
+				52B894D623A8365D0021CBA3 /* FavoriteViewController.swift */,
+				52B894D823A837160021CBA3 /* CustomTableViewCell.swift */,
+			);
+			path = "View controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +248,10 @@
 				520A711823A8335300139C10 /* ImageClient.swift in Sources */,
 				520A711B23A833B100139C10 /* Podcast.swift in Sources */,
 				520A711423A8333800139C10 /* NetworkHelper.swift in Sources */,
-				520A70F523A8320C00139C10 /* ViewController.swift in Sources */,
+				520A711D23A8343800139C10 /* PodcastAPI.swift in Sources */,
+				52B894D723A8365D0021CBA3 /* FavoriteViewController.swift in Sources */,
+				520A70F523A8320C00139C10 /* PodcastViewController.swift in Sources */,
+				52B894D923A837160021CBA3 /* CustomTableViewCell.swift in Sources */,
 				520A711623A8334700139C10 /* AppError.swift in Sources */,
 				520A70F123A8320C00139C10 /* AppDelegate.swift in Sources */,
 				520A70F323A8320C00139C10 /* SceneDelegate.swift in Sources */,

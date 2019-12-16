@@ -10,18 +10,47 @@
         <!--Podcast-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PodcastViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UAU-O0-ChH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cMP-Iw-knj">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="143" id="fky-dc-sE8">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="143"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fky-dc-sE8" id="W3R-7Z-iNv" customClass="CustomTableViewCell" customModule="PodcastReview" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cMP-Iw-knj" firstAttribute="top" secondItem="UAU-O0-ChH" secondAttribute="bottom" id="5Od-ni-ewo"/>
+                            <constraint firstItem="UAU-O0-ChH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6kI-p7-ANt"/>
+                            <constraint firstItem="cMP-Iw-knj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cfI-BF-i87"/>
+                            <constraint firstItem="UAU-O0-ChH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eN3-gD-SrK"/>
+                            <constraint firstItem="cMP-Iw-knj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eps-le-24r"/>
+                            <constraint firstItem="UAU-O0-ChH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p79-S5-zbD"/>
+                            <constraint firstAttribute="bottom" secondItem="cMP-Iw-knj" secondAttribute="bottom" id="sMT-UO-6Hf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Podcast" image="antenna.radiowaves.left.and.right" catalog="system" id="gyB-m9-JMj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="-267"/>
+            <point key="canvasLocation" x="953.62318840579712" y="-267.1875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="uHn-8J-sLj">
@@ -29,6 +58,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xUQ-fh-lhS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z31-8I-ujr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -44,7 +74,7 @@
         <!--Favorite-->
         <scene sceneID="QWg-Kl-MPu">
             <objects>
-                <viewController id="4zn-Kh-Scr" sceneMemberID="viewController">
+                <viewController id="4zn-Kh-Scr" customClass="FavoriteViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r02-7W-4yY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
