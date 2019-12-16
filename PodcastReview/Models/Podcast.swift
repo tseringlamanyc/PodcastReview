@@ -8,4 +8,6 @@
 
 import Foundation
 
-
+struct Podcast: Encodable {
+    let collectionName: String
+}

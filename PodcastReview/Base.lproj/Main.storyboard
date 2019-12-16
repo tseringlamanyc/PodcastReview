@@ -94,17 +94,19 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="-267.1875"/>
         </scene>
-        <!--View Controller-->
+        <!--Podcast Detail View Controller-->
         <scene sceneID="OU9-Ay-Mdz">
             <objects>
-                <viewController id="HOK-wZ-Qhy" sceneMemberID="viewController">
+                <viewController id="HOK-wZ-Qhy" customClass="PodcastDetailViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJd-VR-Mi7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5sn-k8-SfE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Dfj-Ro-8o2"/>
+                    <navigationItem key="navigationItem" id="Dfj-Ro-8o2">
+                        <barButtonItem key="rightBarButtonItem" title="Add to favorites" id="UaV-UB-54O"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbB-bM-yKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="458.70535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Detail View Controller-->
         <scene sceneID="Z4U-tW-MyA">
             <objects>
-                <viewController id="acz-kv-lFp" sceneMemberID="viewController">
+                <viewController id="acz-kv-lFp" customClass="FavoriteDetailViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hob-d0-Lkr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
