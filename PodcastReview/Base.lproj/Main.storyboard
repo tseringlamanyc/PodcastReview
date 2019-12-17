@@ -98,12 +98,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j7-W1-QlC">
+                                <rect key="frame" x="20" y="541" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="9j7-W1-QlC" firstAttribute="leading" secondItem="5sn-k8-SfE" secondAttribute="leading" constant="20" id="0IA-vt-fa6"/>
                             <constraint firstItem="78W-XN-SmU" firstAttribute="leading" secondItem="5sn-k8-SfE" secondAttribute="leading" constant="20" id="Hme-iI-2r7"/>
+                            <constraint firstItem="9j7-W1-QlC" firstAttribute="top" secondItem="78W-XN-SmU" secondAttribute="bottom" constant="8" id="Kgz-9l-Ks1"/>
                             <constraint firstItem="78W-XN-SmU" firstAttribute="top" secondItem="xY3-ub-Rog" secondAttribute="bottom" constant="8" id="Pzw-8V-3RL"/>
                             <constraint firstItem="Gbs-R0-mHo" firstAttribute="height" secondItem="dJd-VR-Mi7" secondAttribute="height" multiplier="0.378348" id="S1e-cm-NtD"/>
+                            <constraint firstItem="5sn-k8-SfE" firstAttribute="trailing" secondItem="9j7-W1-QlC" secondAttribute="trailing" constant="20" id="Z6f-Mm-SBv"/>
                             <constraint firstItem="5sn-k8-SfE" firstAttribute="trailing" secondItem="Gbs-R0-mHo" secondAttribute="trailing" constant="20" id="ZTt-0w-qxj"/>
                             <constraint firstItem="Gbs-R0-mHo" firstAttribute="top" secondItem="5sn-k8-SfE" secondAttribute="top" constant="8" id="aHU-Xn-CaC"/>
                             <constraint firstItem="Gbs-R0-mHo" firstAttribute="leading" secondItem="5sn-k8-SfE" secondAttribute="leading" constant="20" id="itI-af-eyX"/>
@@ -115,12 +124,17 @@
                         <viewLayoutGuide key="safeArea" id="5sn-k8-SfE"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dfj-Ro-8o2">
-                        <barButtonItem key="rightBarButtonItem" title="Add to favorites" id="UaV-UB-54O"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add to favorites" id="UaV-UB-54O">
+                            <connections>
+                                <action selector="favoritePressed:" destination="HOK-wZ-Qhy" id="Vog-MZ-bnc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="artistName" destination="78W-XN-SmU" id="MgP-ox-0Hv"/>
                         <outlet property="podcastImage" destination="Gbs-R0-mHo" id="HgA-jO-wS6"/>
                         <outlet property="podcastName" destination="xY3-ub-Rog" id="4U4-Av-lfj"/>
+                        <outlet property="trackID" destination="9j7-W1-QlC" id="cwe-3X-2qv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbB-bM-yKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,7 +180,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="acz-kv-lFp" kind="show" id="ifL-jw-d5E"/>
+                                            <segue destination="HOK-wZ-Qhy" kind="show" identifier="favWay" id="b1m-3S-pTM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -182,15 +196,18 @@
                         <viewLayoutGuide key="safeArea" id="0gA-d1-l9I"/>
                     </view>
                     <navigationItem key="navigationItem" id="fBS-Gz-raI"/>
+                    <connections>
+                        <outlet property="tableView" destination="om0-Ze-LSu" id="9kN-4K-hfr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDG-C3-Uop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1863.7681159420292" y="458.70535714285711"/>
         </scene>
-        <!--Favorite Detail View Controller-->
+        <!--Podcast Detail View Controller-->
         <scene sceneID="Z4U-tW-MyA">
             <objects>
-                <viewController id="acz-kv-lFp" customClass="FavoriteDetailViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="acz-kv-lFp" customClass="PodcastDetailViewController" customModule="PodcastReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hob-d0-Lkr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,4 +263,7 @@
         <image name="antenna.radiowaves.left.and.right" catalog="system" width="64" height="54"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Cl-en-wuY"/>
+    </inferredMetricsTieBreakers>
 </document>

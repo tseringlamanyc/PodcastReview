@@ -23,6 +23,8 @@
 		52603D9023A83A5A009370F2 /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52603D8F23A83A5A009370F2 /* FavoriteDetailViewController.swift */; };
 		52B894D723A8365D0021CBA3 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B894D623A8365D0021CBA3 /* FavoriteViewController.swift */; };
 		52B894D923A837160021CBA3 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B894D823A837160021CBA3 /* CustomTableViewCell.swift */; };
+		52BEA34E23A95EE900783CF2 /* PostFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BEA34D23A95EE900783CF2 /* PostFavorite.swift */; };
+		52BEA35023A9658200783CF2 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BEA34F23A9658200783CF2 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		52603D8F23A83A5A009370F2 /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
 		52B894D623A8365D0021CBA3 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		52B894D823A837160021CBA3 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		52BEA34D23A95EE900783CF2 /* PostFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFavorite.swift; sourceTree = "<group>"; };
+		52BEA34F23A9658200783CF2 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +130,7 @@
 				520A711323A8333800139C10 /* NetworkHelper.swift */,
 				520A711523A8334700139C10 /* AppError.swift */,
 				524B5F1923A943FC005C689F /* ImageClient.swift */,
+				52BEA34F23A9658200783CF2 /* Alert.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				520A711A23A833B100139C10 /* Podcast.swift */,
+				52BEA34D23A95EE900783CF2 /* PostFavorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,8 +271,10 @@
 				52B894D723A8365D0021CBA3 /* FavoriteViewController.swift in Sources */,
 				520A70F523A8320C00139C10 /* PodcastViewController.swift in Sources */,
 				52B894D923A837160021CBA3 /* CustomTableViewCell.swift in Sources */,
+				52BEA35023A9658200783CF2 /* Alert.swift in Sources */,
 				524B5F1A23A943FC005C689F /* ImageClient.swift in Sources */,
 				520A711623A8334700139C10 /* AppError.swift in Sources */,
+				52BEA34E23A95EE900783CF2 /* PostFavorite.swift in Sources */,
 				520A70F123A8320C00139C10 /* AppDelegate.swift in Sources */,
 				52603D8E23A83A46009370F2 /* PodcastDetailViewController.swift in Sources */,
 				520A70F323A8320C00139C10 /* SceneDelegate.swift in Sources */,

@@ -10,6 +10,8 @@ import UIKit
 
 class FavoriteDetailViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
