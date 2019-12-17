@@ -8,54 +8,60 @@
 
 import Foundation
 
-public final class NetworkHelper {
-  private init() {
-    let cache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 10 * 1024 * 1024, diskPath: nil)
-    URLCache.shared = cache
-  }
-  public static let shared = NetworkHelper()
-  
-  public func performDataTask(endpointURLString: String,
-                              httpMethod: String,
-                              httpBody: Data?,
-                              completionHandler: @escaping (AppError?, Data?, HTTPURLResponse?) ->Void) {
-    guard let url = URL(string: endpointURLString) else {
-      completionHandler(AppError.badURL("\(endpointURLString)"), nil, nil)
-      return
-    }
-    var request = URLRequest(url: url)
-    request.httpMethod = httpMethod
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-      if let error = error {
-        completionHandler(AppError.networkError(error), nil, response as? HTTPURLResponse)
-        return
-      } else if let data = data {
-        completionHandler(nil, data, response as? HTTPURLResponse)
-      }
-    }
-    task.resume()
-  }
-  
-  public func performUploadTask(endpointURLString: String,
-                                httpMethod: String,
-                                httpBody: Data?,
-                                completionHandler: @escaping (AppError?, Data?, HTTPURLResponse?) ->Void) {
-    guard let url = URL(string: endpointURLString) else {
-      completionHandler(AppError.badURL("\(endpointURLString)"), nil, nil)
-      return
-    }
-    var request = URLRequest(url: url)
-    request.httpMethod = httpMethod
-    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+class NetworkHelper {
+    // we will create a shared instance of the NetworkHelper
+    static let shared = NetworkHelper()
     
-    let task = URLSession.shared.uploadTask(with: request, from: httpBody) { (data, response, error) in
-      if let error = error {
-        completionHandler(AppError.networkError(error), nil, response as? HTTPURLResponse)
-        return
-      } else if let data = data {
-        completionHandler(nil, data, response as? HTTPURLResponse)
-      }
+    private var session: URLSession
+    
+    // we will make the default initializer private
+    // required in order to be considered a singleton
+    // also forbids anyone from creating an instance of NetworkHelper
+    private init() {
+        session = URLSession(configuration: .default)
     }
-    task.resume()
-  }
+    
+    func performDataTask(with request: URLRequest,
+                         completion: @escaping (Result<Data, AppError>) -> ()) {
+        // two states on dataTask, resume() and suspended by default
+        // suspended simply won't perform network request
+        // this ultimately leads to debugging errors and time lost if
+        // you don't explicitly resume() request
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            // 1. deal with error if any
+            // check for client network errors
+            if let error = error {
+                completion(.failure(.networkClientError(error)))
+                return
+            }
+            
+            // 2. downcast URLResponse (response) to HTTPURLResponse to
+            //    get access to the statusCode property on HTTPURLResponse
+            guard let urlResponse = response as? HTTPURLResponse else {
+                completion(.failure(.noResponse))
+                return
+            }
+            
+            // 3. unwrap the data object
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            // 4. validate that the status code is in the 200 range otherwise it's a
+            //    bad status code
+            switch urlResponse.statusCode {
+            case 200...299: break // everything went well here
+            default:
+                completion(.failure(.badStatusCode(urlResponse.statusCode)))
+                return
+            }
+            
+            // 5. capture data as success case
+            completion(.success(data))
+        }
+        dataTask.resume()
+    }
 }

@@ -8,6 +8,17 @@
 
 import Foundation
 
-struct Podcast: Encodable {
+struct PodcastData: Decodable {
+    
+    let results: [Podcast]
+}
+
+struct Podcast: Decodable {
+    
+    let artistName: String
     let collectionName: String
+    let artworkUrl600: String
+    let artworkUrl100: String
+    let primaryGenreName: String
+    
 }

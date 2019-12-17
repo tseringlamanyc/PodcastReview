@@ -8,28 +8,19 @@
 
 import Foundation
 
-public enum AppError: Error {
-  case badURL(String)
-  case networkError(Error)
+enum AppError: Error {
+  case badURL(String) // associated value
   case noResponse
+  case networkClientError(Error) // no internet connection
+  case noData
   case decodingError(Error)
-  case badStatusCode(String)
-  case badMimeType(String)
-  
-  public func errorMessage() -> String {
-    switch self {
-    case .badURL(let message):
-      return "badURL: \(message)"
-    case .networkError(let error):
-      return error.localizedDescription
-    case .noResponse:
-      return "no network response"
-    case .decodingError(let error):
-      return "decoding error: \(error)"
-    case .badStatusCode(let message):
-      return "bad status code: \(message)"
-    case .badMimeType(let mimeType):
-      return "bad mime type: \(mimeType)"
+  case encodingError(Error)
+  case badStatusCode(Int) // 404, 500
+  case badMimeType(String) // image/jpg
+    
+    // handle more descriptive language for error cases
+    var description: String {
+        return "AppError: \(self)"
     }
-  }
 }
+

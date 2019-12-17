@@ -9,11 +9,36 @@
 import UIKit
 
 class PodcastDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var podcastImage: UIImageView!
+    @IBOutlet weak var podcastName: UILabel!
+    @IBOutlet weak var artistName: UILabel!
+    
+    var podcast: Podcast!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI()
     }
+    
+    func updateUI() {
+        podcastName.text = podcast.collectionName
+        artistName.text = podcast.artistName
+        
+        podcastImage.getImage(with: podcast.artworkUrl600) { (result) in
+            switch result {
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.podcastImage.image = UIImage(systemName: "person.fill")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.podcastImage.image = image
+                }
+            }
+        }
+    }
+    
+    
     
 }
